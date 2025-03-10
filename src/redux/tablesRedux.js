@@ -13,7 +13,7 @@ export const updateTable = (payload) => ({ type: UPDATE_TABLE, payload });
 
 export const fetchTables = () => {
   return (dispatch) => {
-    fetch('http://localhost:3132/api/tables')
+    fetch('http://localhost:3131/api/tables')
       .then((res) => res.json())
       .then((data) => dispatch(loadTables(data)));
   };
@@ -21,7 +21,7 @@ export const fetchTables = () => {
 
 export const editTable = (table) => {
   return (dispatch) => {
-    fetch(`http://localhost:3132/api/tables/${table.id}`, {
+    fetch(`http://localhost:3131/api/tables/${table.id}`, {
       method: 'PATCH',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(table),
